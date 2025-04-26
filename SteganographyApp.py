@@ -126,16 +126,17 @@ def binaryToNumber(bin):
 
 def main():
   #Ask user if they want to encode/decode
+  '''
   myImg = Image.open('pki.png')
-  myMsg = "This is a secret message I will hide in an image."
+  myMsg = "Here is another secret message hidden in a picture."
   encode(myImg, myMsg)
   myImg.close()
-
-
+  '''
+  #'''
   yourImg = Image.open('secretImg.png')
   msg = decode(yourImg)
   print(msg)
-
+  #'''
     
 if __name__ == '__main__':
   main()
