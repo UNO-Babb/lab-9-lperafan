@@ -125,18 +125,20 @@ def binaryToNumber(bin):
   return decimal
 
 def main():
-  #Ask user if they want to encode/decode
-  '''
-  myImg = Image.open('pki.png')
-  myMsg = "Here is another secret message hidden in a picture."
-  encode(myImg, myMsg)
-  myImg.close()
-  '''
-  #'''
-  yourImg = Image.open('secretImg.png')
-  msg = decode(yourImg)
-  print(msg)
-  #'''
+    choice = input("encode or decode?")
+
+    if choice == "encode":
+        message = input("Enter the secret message: ")
+        myImg = Image.open('pki.png')
+        encode(myImg, message)
+        myImg.close()
+        print("Message encoded and saved as secretImg.png!")
+    elif choice == "decode":
+        img = Image.open('secretImg.png')
+        hidden_message = decode(img)
+        print("Hidden message:", hidden_message)
+    else:
+        print("Invalid choice. Please type 'encode' or 'decode'.")
     
 if __name__ == '__main__':
   main()
